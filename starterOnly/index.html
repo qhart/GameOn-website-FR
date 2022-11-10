@@ -58,9 +58,9 @@
           <div class="modal-body">
             <form
               name="reserve"
+              id="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
@@ -70,7 +70,8 @@
                   type="text"
                   id="first"
                   name="first"
-                /><br>
+                />
+                <span class="text-error">Votre prénom n'est pas valide</span>
               </div>
               <div
                 class="formData">

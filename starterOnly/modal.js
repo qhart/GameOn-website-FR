@@ -12,7 +12,8 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalClose = document.querySelectorAll(".close");
 const formData = document.querySelectorAll(".formData");
-const submitBtn = document.querySelector(".btn-submit");
+const btnSubmit = document.querySelector(".btn-submit");
+const form = document.getElementById("reserve");
 
 // Form data
 
@@ -20,8 +21,9 @@ const firstName = document.getElementById('first').value;
 
 // Regex rules
 
-const firstNameRegex = '[a-z][A-Z]{2,}';
+const firstNameRegex = "/^[a-zA-Z]{3,}$/";
 
+form.addEventListener("submit", validate);
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -39,16 +41,21 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-// Disable submit function
-function disableSubmit(disabled) {
-  if (disabled) {
-    document
-      .getElementByClass("btn-submit")
-      .setAttribute("disabled", true);
-  } else {
-    document
-      .getElementByClass("btn-submit")
-      .removeAttribute("disabled");
-  }
-}
+// form validation
 
+function validate(e) {
+  
+  e.preventDefault();
+  document.getElementById("first").className = "text-control invalid";
+
+
+  
+  // Check 
+/*    if (firstNameRegex.test(firstName)) {
+      alert("ok");
+    }
+    else {
+      alert("erreur");
+    }
+*/
+}
