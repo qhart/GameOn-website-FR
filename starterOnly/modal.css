@@ -188,18 +188,6 @@ main {
   margin: 15px auto;
 }
 
-.invalid {
-  border: 1px solid red;
-}
-
-.invalid + .text-error {
-  display: block;
-}
-
-.text-error {
-  display: none;
-}
-
 label {
   font-family: var(--font-default);
   font-size: 17px;
@@ -220,6 +208,23 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+.invalid {
+  border: 1px solid red;
+}
+
+.text-error {
+  display: none;
+  line-height: 25px;
+  font-size: 13px;
+  color: red;
+  font-weight: normal;
+}
+
+.invalid + .text-error, .invalid-radio .text-error, .invalid-check ~ .text-error {
+  display: block;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
