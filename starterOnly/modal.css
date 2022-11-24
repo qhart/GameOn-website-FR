@@ -167,7 +167,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content {
+.content, #confirmation {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -181,7 +181,7 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
+.modal-body, #confirmation {
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -225,7 +225,14 @@ input {
 
 #confirmation {
   display: none;
-  padding: 100px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 700px;
+}
+
+#confirmation > p {
+  margin-top: 70%;
 }
 
 .formData[data-error]::after {

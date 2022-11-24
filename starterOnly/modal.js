@@ -173,11 +173,9 @@ function validate(e) {
   const checkboxOk = checkboxVerify();
 
   if ( firstNameOk && lastNameOk && emailOk && birthdayOk && quantityPartOk && radioOk && checkboxOk) {
-
-  }
-  else {
     modalBody.style.display = "none";
-    confirmation.style.display = "block";
+    confirmation.style.display = "flex";
+    btnClose.style.display = "block";
   }
 
 }
