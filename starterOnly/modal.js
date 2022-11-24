@@ -13,7 +13,10 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalClose = document.querySelectorAll(".close");
 const formData = document.querySelectorAll(".formData");
 const btnSubmit = document.querySelector(".btn-submit");
+const btnClose = document.querySelector(".btn-close");
 const form = document.getElementById("reserve");
+const confirmation = document.getElementById("confirmation");
+const modalBody = document.querySelector(".modal-body");
 
 // Form data
 
@@ -40,6 +43,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // close modal event
 modalClose.forEach((close) => close.addEventListener("click", closeModal));
+btnClose.addEventListener("click", closeModal);
 
 // launch modal form
 function launchModal() {
@@ -103,9 +107,11 @@ function birthdayCheck() {
 
   if (birthdate.value === '') {
     inputValidation(birthdate, false, "text-control", "invalid");
+    return false;
   }
   else {
     inputValidation(birthdate, true, "text-control");
+    return true;
   }
   
 }
@@ -144,15 +150,19 @@ function radioCheck() {
 function checkboxVerify() {
   if (!termsAndConditions.checked) {
     inputValidation(termsAndConditions, false, "checkbox-input", "invalid-check");
+    return false;
   }
   else {
     inputValidation(termsAndConditions, true, "checkbox-input");
+    return true;
   }
 }
 
 // form validation
 
 function validate(e) {
+
+  e.preventDefault();
 
   const firstNameOk = firstNameCheck();
   const lastNameOk = lastNameCheck();
@@ -163,10 +173,9 @@ function validate(e) {
   const checkboxOk = checkboxVerify();
 
   if ( firstNameOk && lastNameOk && emailOk && birthdayOk && quantityPartOk && radioOk && checkboxOk) {
-    console.log("OK");
-  }
-  else {
-    e.preventDefault();
+    modalBody.style.display = "none";
+    confirmation.style.display = "flex";
+    btnClose.style.display = "block";
   }
 
 }

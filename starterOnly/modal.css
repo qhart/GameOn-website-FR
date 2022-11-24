@@ -111,8 +111,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -169,7 +167,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content {
+.content, #confirmation {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -183,7 +181,7 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
+.modal-body, #confirmation {
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -223,6 +221,18 @@ input {
 
 .invalid + .text-error, .invalid-radio .text-error, .invalid-check ~ .text-error {
   display: block;
+}
+
+#confirmation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 700px;
+}
+
+#confirmation > p {
+  margin-top: 70%;
 }
 
 .formData[data-error]::after {
@@ -339,7 +349,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -350,6 +361,9 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+.btn-close {
+  display: none;
+}
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -357,14 +371,12 @@ input[data-error]::after {
   font-size: 1.1rem;
   font-weight: normal;
 }
-
 .custom-select select {
   display: none;
 }
 .select-selected {
   background-color: #fff;
 }
-
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
@@ -419,7 +431,7 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 17px;
 }
 .hero-section {
   min-height: 93vh;
@@ -462,6 +474,9 @@ input[data-error]::after {
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
+}
+.thanks {
+  display: none;
 }
 .btn-signup {
   outline: none;
