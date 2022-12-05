@@ -1,0 +1,42 @@
+@media screen and (max-width: 1024px) {
+
+    .hero-section {
+        display: block;
+        box-shadow: unset;
+    }
+    .hero-content .btn-signup {
+        display: none;
+    }
+    .hero-content {
+        background: #fff;
+        color: #000;
+        padding: 18px;
+        min-width: 0;
+    }
+    .hero-content::after {
+        content: unset;
+    }
+    .hero-headline {
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        white-space: normal;
+    }
+    .hero-text {
+        font-size: 2rem;
+        width: unset;
+    }
+    .hero-img img {
+        margin-top: 35px;
+        border-radius: 15px;
+    }
+    .hero-section > .btn-signup {
+        display: block;
+        margin: 32px auto 10px;
+        padding: 12px 35px;
+    }
+    .copyrights {
+        text-align: center;
+    }
+    
+  }
