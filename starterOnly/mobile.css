@@ -1,0 +1,45 @@
+@media screen and (max-width: 480px) {
+
+    .topnav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topnav a {
+        display: none;
+        color: black;
+    }
+    .topnav a.icon {
+        display: block;
+        float: right;
+    }
+    .topnav a.active {
+        border-radius: 15px;
+    }
+    .topnav.responsive {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header-logo {
+        width: 75%;
+    }
+    .header-logo img{
+        width: 75%;
+        padding: 1rem 0;
+    }
+    .hero-headline{
+        font-size: 2rem;
+    }
+    .hero-text {
+        font-size: 1.5rem;
+    }
+    .bground{
+        position : absolute;
+        top: 70px;
+        background-color: white;
+    }
+    .content{
+        box-shadow: none;
+    }
+    
+  } 
