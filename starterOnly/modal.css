@@ -34,10 +34,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -47,7 +47,7 @@ img {
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
   font-family: Roboto, sans-serif;
 }
 
@@ -130,9 +130,11 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content, #confirmation {
+.content,
+#confirmation {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -146,7 +148,8 @@ main {
   padding-top: 10px;
 }
 
-.modal-body, #confirmation {
+.modal-body,
+#confirmation {
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -184,7 +187,9 @@ input {
   font-weight: normal;
 }
 
-.invalid + .text-error, .invalid-radio .text-error, .invalid-check ~ .text-error {
+.invalid + .text-error,
+.invalid-radio .text-error,
+.invalid-check ~ .text-error {
   display: block;
 }
 
@@ -485,8 +490,3 @@ footer {
     opacity: 1;
   }
 }
-
-
-
-
-
