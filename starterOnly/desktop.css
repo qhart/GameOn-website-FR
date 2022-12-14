@@ -1,11 +1,22 @@
 @media screen and (max-width: 1125px) {
-
-    .topnav a {
-        display: none;
-    }
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-
+  .topnav.responsive {
+    position: relative;
   }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+    float: none;
+    text-align: left;
+  }
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    display: block;
+    float: right;
+  }
+}

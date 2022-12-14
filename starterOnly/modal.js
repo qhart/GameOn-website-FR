@@ -29,12 +29,9 @@ const radioButtons = document.querySelectorAll('input[name="location"]');
 const wrapperRadio = document.getElementById("radioButtons");
 const termsAndConditions = document.getElementById("checkbox1");
 
-
-
-// Regex const 
+// Regex const
 
 const emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-
 
 form.addEventListener("submit", validate);
 
@@ -48,6 +45,8 @@ btnClose.addEventListener("click", closeModal);
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  modalBody.style.display = "block";
+  confirmation.style.display = "none";
 }
 
 // close modal form
@@ -58,75 +57,59 @@ function closeModal() {
 function inputValidation(item, state, defaultClass, invalidClass) {
   if (state == false) {
     item.className = defaultClass + " " + invalidClass;
-  }
-  else {
+  } else {
     item.className = defaultClass;
   }
 }
 
 function firstNameCheck() {
-
-  if (firstName.value.length < 2 || firstName.value === '') {
+  if (firstName.value.length < 2 || firstName.value === "") {
     inputValidation(firstName, false, "text-control", "invalid");
     return false;
-  }
-  else {
+  } else {
     inputValidation(firstName, true, "text-control");
     return true;
   }
-
 }
 
 function lastNameCheck() {
-
-  if (lastName.value.length < 2 || lastName.value === '') {
+  if (lastName.value.length < 2 || lastName.value === "") {
     inputValidation(lastName, false, "text-control", "invalid");
     return false;
-  }
-  else {
+  } else {
     inputValidation(lastName, true, "text-control");
     return true;
   }
-
 }
 
 function emailCheck() {
-
-  if (!emailRegex.test(email.value) || email.value === '') {
+  if (!emailRegex.test(email.value) || email.value === "") {
     inputValidation(email, false, "text-control", "invalid");
     return false;
-  }
-  else {
+  } else {
     inputValidation(email, true, "text-control");
     return true;
   }
-
 }
 
 function birthdayCheck() {
-
-  if (birthdate.value === '') {
+  if (birthdate.value === "") {
     inputValidation(birthdate, false, "text-control", "invalid");
     return false;
-  }
-  else {
+  } else {
     inputValidation(birthdate, true, "text-control");
     return true;
   }
-  
 }
 
 function quantityPartCheck() {
-
-  if (isNaN(quantityPart.value) || quantityPart.value === '') {
+  if (isNaN(quantityPart.value) || quantityPart.value === "") {
     inputValidation(quantityPart, false, "text-control", "invalid");
     return false;
-  }
-  else {
+  } else {
     inputValidation(quantityPart, true, "text-control");
     return true;
   }
-
 }
 
 function radioCheck() {
@@ -140,8 +123,7 @@ function radioCheck() {
   if (isChecked == false) {
     inputValidation(wrapperRadio, false, "formData", "invalid-radio");
     return false;
-  }
-  else {
+  } else {
     inputValidation(wrapperRadio, true, "formData");
     return true;
   }
@@ -149,10 +131,14 @@ function radioCheck() {
 
 function checkboxVerify() {
   if (!termsAndConditions.checked) {
-    inputValidation(termsAndConditions, false, "checkbox-input", "invalid-check");
+    inputValidation(
+      termsAndConditions,
+      false,
+      "checkbox-input",
+      "invalid-check"
+    );
     return false;
-  }
-  else {
+  } else {
     inputValidation(termsAndConditions, true, "checkbox-input");
     return true;
   }
@@ -161,7 +147,6 @@ function checkboxVerify() {
 // form validation
 
 function validate(e) {
-
   e.preventDefault();
 
   const firstNameOk = firstNameCheck();
@@ -172,11 +157,18 @@ function validate(e) {
   const radioOk = radioCheck();
   const checkboxOk = checkboxVerify();
 
-  if ( firstNameOk && lastNameOk && emailOk && birthdayOk && quantityPartOk && radioOk && checkboxOk) {
+  if (
+    firstNameOk &&
+    lastNameOk &&
+    emailOk &&
+    birthdayOk &&
+    quantityPartOk &&
+    radioOk &&
+    checkboxOk
+  ) {
     modalBody.style.display = "none";
     confirmation.style.display = "flex";
     btnClose.style.display = "block";
+    form.reset();
   }
-
 }
-
